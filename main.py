@@ -82,4 +82,68 @@ print("inches to cm", cm(70))
 def test_required_argu(y, x=1):
     return x + y
 
-print(test_required_argu(5,3))
+
+print(test_required_argu(5, 3))
+
+# list, tuple, dictionaries, sets
+# set of pp
+example = set()
+example.add(-18)
+example.add(False)
+example.add(math.pi)
+example.add("was OTM -> ATM -> ITM")
+print("this is your set:", example)
+
+example.add(-18)
+print("this is the second print:", example)
+print(len(example))
+example.remove(-18)
+print("the set after remocal:", example)
+print(len(example))
+
+evens = set([2, 4, 6, 8, 10])
+odds = set([1, 3, 5, 7, 9])
+
+print(odds)
+print(evens)
+print(odds.union(evens))
+print("intersectin of O and E:", odds.intersection(evens))
+print(2 in evens)
+print(9 not in evens)
+
+# lists
+list_list = [1, 2, 3, 4, 5, 6, 7, 8]
+list_list.append(14)
+print(list_list)
+print(type(list_list))
+print(type(evens))
+set11= {"hi", "hello"}
+print(set11)
+set11.add(1)
+print(set11)
+print(type(set11))
+print(list_list[0])
+print(list_list[-1])
+
+user_id = 209
+message = "Hi"
+language = "English"
+date = "today"
+location = (44.222, -14.232)
+
+post_dictiomary =   {"user_id": 209, "message": "hi", "date":"todya", "langauge:": "english", "location":"new york"}
+print(type(post_dictiomary))
+print(post_dictiomary)
+print(post_dictiomary["message"])
+
+if "strike_price" in post_dictiomary:
+    print(post_dictiomary["strike_price"])
+else:
+    print("Strikeprice is not available")
+print()
+
+for key in post_dictiomary.keys():
+    value = post_dictiomary[key]
+
+    print(key , "=",  value)
+
