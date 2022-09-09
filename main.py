@@ -117,7 +117,7 @@ list_list.append(14)
 print(list_list)
 print(type(list_list))
 print(type(evens))
-set11= {"hi", "hello"}
+set11 = {"hi", "hello"}
 print(set11)
 set11.add(1)
 print(set11)
@@ -131,7 +131,7 @@ language = "English"
 date = "today"
 location = (44.222, -14.232)
 
-post_dictiomary =   {"user_id": 209, "message": "hi", "date":"todya", "langauge:": "english", "location":"new york"}
+post_dictiomary = {"user_id": 209, "message": "hi", "date": "todya", "langauge:": "english", "location": "new york"}
 print(type(post_dictiomary))
 print(post_dictiomary)
 print(post_dictiomary["message"])
@@ -145,5 +145,47 @@ print()
 for key in post_dictiomary.keys():
     value = post_dictiomary[key]
 
-    print(key , "=",  value)
+    print(key, "=", value)
 
+# tplesu tuples
+# code
+# print
+# lis vs tuple
+# List []
+# tuple
+
+import sys
+
+print("dir of sys:", dir(sys))
+
+tulpe_names = ("t1", "t2")
+list_names = {"l1", "l2"}
+print()
+print("the size of T:", sys.getsizeof(tulpe_names))
+print("the size of L:", sys.getsizeof(list_names))
+import timeit
+
+list_time_test = timeit.timeit(stmt="[1992, 1994, 1998, 1998]", number=1000000)
+print("list time: ", list_time_test)
+print()
+tuple_time_test = timeit.timeit(stmt="(1992, 1994, 1998, 1998)", number=1000000)
+print("tuple time: ", list_time_test)
+print(type(list_time_test))
+
+
+"""
+# (age, country< knows_py)
+survey = (30, "Ye", True)
+age = survey[0]
+country = survey[1]
+knows_py = survey[2]
+print("Age:", age)
+print("Country:", country)
+print("Knows py:", knows_py)
+"""
+
+survey_2 =(25, "DE", False)
+age, country, knows_py = survey_2
+print("Age:", age)
+print("Country:", country)
+print("Knows py:", knows_py)
