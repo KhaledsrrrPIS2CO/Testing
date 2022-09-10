@@ -211,6 +211,8 @@ print("The logger level is: ", logger.level)
 import math
 
 logger.info("now running the quadtatic func")
+
+
 def quadratic_formula(a, b, c):
     """return the solutions tio the equation ax^2 + bx +c = 0"""
     logger.info("quadratic_formula({0}, {1}, {2})".format(a, b, c))
@@ -231,3 +233,40 @@ def quadratic_formula(a, b, c):
 
 roots = quadratic_formula(1, 0, -4)
 print(roots)
+
+"""
+def fib(n):
+    if n == 1:
+        return 1
+    elif n == 2:
+        return 1
+    elif n > 2:
+        return fib(n - 1) + fib(n - 2)
+
+
+for n in range(1, 11):
+    print(n, ":", fib(n))
+"""
+# memoiization
+fib_cache = {}
+print("this is a:", type(fib_cache))
+
+
+def fib_memo(n):
+    # if we have cached the value, then return it
+    if n in fib_cache:
+        return fib_cache[n]
+    # compute the nth term
+    if n == 1:
+        value = 1
+    elif n == 2:
+        value = 1
+    elif n > 2:
+        value = fib_memo(n - 1) + fib_memo(n - 2)
+    # Cache the value and return it
+    fib_cache[n] = value
+    return value
+
+
+for n in range(1, 101):
+    print(n, ":", fib_memo(n))
