@@ -172,7 +172,6 @@ tuple_time_test = timeit.timeit(stmt="(1992, 1994, 1998, 1998)", number=1000000)
 print("tuple time: ", list_time_test)
 print(type(list_time_test))
 
-
 """
 # (age, country< knows_py)
 survey = (30, "Ye", True)
@@ -184,8 +183,51 @@ print("Country:", country)
 print("Knows py:", knows_py)
 """
 
-survey_2 =(25, "DE", False)
+survey_2 = (25, "DE", False)
 age, country, knows_py = survey_2
 print("Age:", age)
 print("Country:", country)
 print("Knows py:", knows_py)
+
+import logging
+
+# create and configure logger
+LOG_FORMAT = "%(levelname)s %(asctime)s- %(message)s"
+logging.basicConfig(filename="/Users/khaled/Documents/Loggertest.log",
+                    level=logging.DEBUG,
+                    format=LOG_FORMAT,
+                    filemode="w")
+logger = logging.getLogger()
+# test the logger
+logger.debug("debug")
+logger.info("Hi 1st message")
+logger.info("ingo")
+logger.warning("warning")
+logger.error("error")
+logger.critical("criticsl")
+
+print("The logger level is: ", logger.level)
+
+import math
+
+logger.info("now running the quadtatic func")
+def quadratic_formula(a, b, c):
+    """return the solutions tio the equation ax^2 + bx +c = 0"""
+    logger.info("quadratic_formula({0}, {1}, {2})".format(a, b, c))
+
+    # compute the discriminant
+    logger.debug("# Compute the discriminant")
+    disc = b ** 2 - 4 * a * c
+
+    # compute the two roots
+    logger.debug("# Compute the two roots")
+    root1 = (-b + math.sqrt(disc)) / (2 * a)
+    root2 = (-b - math.sqrt(disc)) / (2 * a)
+
+    # return the roots
+    logger.debug("# Return the roots")
+    return (root1, root2)
+
+
+roots = quadratic_formula(1, 0, -4)
+print(roots)
