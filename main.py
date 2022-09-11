@@ -23,6 +23,9 @@ print("Shaimaa's day is", shaimaDay)
 if shaimaDay == khaledDay:
     print("wow")
 """
+"""
+
+from functools import lru_cache
 
 
 # functions
@@ -50,7 +53,7 @@ print("the pi is:", pi)
 
 
 def volume(r):
-    """the fun retrusn volume of sphere radius with r"""
+    """"""the fun retrusn volume of sphere radius with r""""""
     v = (4.0 / 3.0) * pi * r ** 3
     return v
 
@@ -59,7 +62,7 @@ print("the volume is:", volume(2))
 
 
 def triangle_area(b, h):
-    """returns the area of a triangle with b base and h height."""
+    """"""returns the area of a triangle with b base and h height.""""""
     return 0.5 * b * h
 
 
@@ -67,7 +70,7 @@ print("the triangle area is", triangle_area(3, 6))
 
 
 def cm(feet=0, inches=0):
-    """converts length from feet and inches to cm"""
+    """"""converts length from feet and inches to cm""""""
     inches_to_cm = inches * 2.54
     feet_to_cm = feet * 12 * 2.54
     return inches_to_cm + feet_to_cm
@@ -172,7 +175,7 @@ tuple_time_test = timeit.timeit(stmt="(1992, 1994, 1998, 1998)", number=1000000)
 print("tuple time: ", list_time_test)
 print(type(list_time_test))
 
-"""
+""""""
 # (age, country< knows_py)
 survey = (30, "Ye", True)
 age = survey[0]
@@ -181,7 +184,7 @@ knows_py = survey[2]
 print("Age:", age)
 print("Country:", country)
 print("Knows py:", knows_py)
-"""
+""""""
 
 survey_2 = (25, "DE", False)
 age, country, knows_py = survey_2
@@ -214,7 +217,7 @@ logger.info("now running the quadtatic func")
 
 
 def quadratic_formula(a, b, c):
-    """return the solutions tio the equation ax^2 + bx +c = 0"""
+    """"""return the solutions tio the equation ax^2 + bx +c = 0""""""
     logger.info("quadratic_formula({0}, {1}, {2})".format(a, b, c))
 
     # compute the discriminant
@@ -235,6 +238,7 @@ roots = quadratic_formula(1, 0, -4)
 print(roots)
 
 """
+"""
 def fib(n):
     if n == 1:
         return 1
@@ -247,13 +251,20 @@ def fib(n):
 for n in range(1, 11):
     print(n, ":", fib(n))
 """
+"""
 # memoiization
 fib_cache = {}
 print("this is a:", type(fib_cache))
 
 
+@lru_cache(maxsize=1000)
 def fib_memo(n):
-    # if we have cached the value, then return it
+    #chexck the int is + int
+     if type(n) != int:
+         raise TypeError("n should be positive integer")
+     if n < 1:
+        raise ValueError("n should be positive intege")
+# if we have cached the value, then return it
     if n in fib_cache:
         return fib_cache[n]
     # compute the nth term
@@ -270,3 +281,45 @@ def fib_memo(n):
 
 for n in range(1, 101):
     print(n, ":", fib_memo(n))
+    """
+
+# list of sqaure in the 1st hunder integers
+
+square = []
+for i in range(1, 101):
+    square.append(i ** 2)
+
+print(square)
+
+square2 = [i ** 2 for i in range(1, 100)]
+print(square2)
+
+# first hunderd sqaures outcome divided by 5
+remainders5 = [x**2 % 5 for x in range(91, 101)]
+print(remainders5)
+
+remainders11 = [x**2 % 11 for x in range(1, 101)]
+print(remainders11)
+
+v = [2, -3, 1]
+print(4*v)
+w = [x*4 for x in v]
+print(w)
+
+# rene descartes
+A = [1,3,5,7]
+B = [2,4,6,8]
+
+
+cartesian_product = [(a, b) for a in A for b in B]
+print(cartesian_product)
+
+# classes = tempales for c o related and fun do things withat that data
+# e.g. function to calculate the price of of options the function will need 5 parameters 1striek price 2 under price 3 interstare rate 4 time 5 VIX
+# lest do it in a classy way
+
+ #ff data of user, write fun to do stuff
+
+
+
+
