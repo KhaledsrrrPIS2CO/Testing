@@ -65,3 +65,10 @@ def is_prime_v1(n):
 #test function
 for n in range(1,21):
     print(n, is_prime_v1(n))
+
+pnl_list = [72, 78, 78]
+pnl_list_to_set = set(pnl_list)
+print(pnl_list_to_set)
+day_trading = pnl_list_to_set[0]
+print("ur day trading pnl: " , day_trading)
+
