@@ -1,3 +1,5 @@
+import xml.etree.ElementTree as ET
+
 class User:
     pass
 
@@ -69,6 +71,19 @@ for n in range(1,21):
 pnl_list = [72, 78, 78]
 pnl_list_to_set = set(pnl_list)
 print(pnl_list_to_set)
-day_trading = pnl_list_to_set[0]
-print("ur day trading pnl: " , day_trading)
+
+
+# documentation party
+#mind
+
+print("pow",pow(2,3))
+print(2**3)
+
+#XML
+#extended marlnle langauge
+# store data that machines and humans unbdertaansds
+#emelment treee api
+print(dir(ET))
+
+
 
