@@ -45,5 +45,6 @@ with open("daily pnl", "w") as f:
         f.write(str(pnl))
         f.write("\n")
     f.write("Haha")
+print(property)
 
 
