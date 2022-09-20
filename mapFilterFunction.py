@@ -22,9 +22,14 @@ print(map)
 list = list(map(area, radii))
 print(list)
 
-pnl_data = [16, 15, -30, -15, 35, 11, -18, 27, -8, -26, 137, 12, 8, 15, 19, 51]
+pnl_data = [-12, 16, 15, -30, -15, 35, 11, -18, 27, -8, -26, 137, 12, 8, 15, 19, 51]
 pnl_avg = statistics.mean(pnl_data)
-print(pnl_avg)
+print("my avg pnl since 26.08.22:",pnl_avg)
+green_days = [pnl for pnl in pnl_data if pnl > 0]
+print("since 26.08.22")
+print("theeee greeen days:::",green_days)
+red_days = [pnl for pnl in pnl_data if pnl < 0]
+print("urrr red days are: ", red_days)
 
 # sorting
 KSYZ_Capital = ["khaled", "shaima", "Yahya", "Zakarria"]
