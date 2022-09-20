@@ -26,13 +26,24 @@ pnl_data = [16, 15, -30, -15, 35, 11, -18, 27, -8, -26, 137, 12, 8, 15, 19, 51]
 pnl_avg = statistics.mean(pnl_data)
 print(pnl_avg)
 
-for pnl in pnl_data:
-    if pnl>0:
-        green_days_counter = []
-    red_days= pnl<0
-    print(green_days)
-    print(red_days)
+# sorting
+KSYZ_Capital = ["khaled", "shaima", "Yahya", "Zakarria"]
+print("the list in reverse order:", KSYZ_Capital.sort(reverse=False))
+print("this the sorted:", sorted(KSYZ_Capital))
 
-filter(lambda x: x > pnl_avg, pnl_data)
-print(filter(lambda x: x > pnl_avg, pnl_data))
+#files
+#text files e.g. plain text XML JSON Source code
+#bianary files
+ksyz_teaam= ["khaled", "shaima", "yahya","Zak"]
+with open("names.txt", "w") as f:
+    for name in ksyz_teaam:
+        f.write(name)
+        f.write("\n")
+
+with open("daily pnl", "w") as f:
+    for pnl in pnl_data:
+        f.write(str(pnl))
+        f.write("\n")
+    f.write("Haha")
+
 
